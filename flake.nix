@@ -19,11 +19,14 @@
         toolchain = pkgs.rustPlatform;
       in rec
       {
-        packages.default = toolchain.buildRustPackage {
-          pname = "anyrun-powermenu";
-          version = "unstable-2024-06-25";
-          src = ./.;
-          cargoLock.lockFile = ./Cargo.lock;
+        packages = {
+          default = packages.powermenu;
+          anyrun-powermenu = toolchain.buildRustPackage {
+            pname = "anyrun-powermenu";
+            version = "unstable-2024-06-25";
+            src = ./.;
+            cargoLock.lockFile = ./Cargo.lock;
+          };
         };
 
         devShells.default = pkgs.mkShell {
