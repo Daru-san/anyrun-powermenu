@@ -23,7 +23,7 @@
           default = packages.powermenu;
           anyrun-powermenu = toolchain.buildRustPackage {
             pname = "anyrun-powermenu";
-            version = "unstable-2024-06-25";
+            version = "0.1.0";
             src = ./.;
             cargoLock.lockFile = ./Cargo.lock;
           };
