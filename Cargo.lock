@@ -53,7 +53,8 @@ dependencies = [
 [[package]]
 name = "anyrun-interface"
 version = "0.1.0"
-source = "git+https://github.com/Kirottu/anyrun#7aabad8d5bb7d1bffae903ce86427b888ab824b4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7e8b75df6f440ed85d98072c47d1215447eb36e6d1ff9c9aa9562fa1cd445186"
 dependencies = [
  "abi_stable",
 ]
@@ -61,7 +62,8 @@ dependencies = [
 [[package]]
 name = "anyrun-macros"
 version = "0.1.0"
-source = "git+https://github.com/Kirottu/anyrun#7aabad8d5bb7d1bffae903ce86427b888ab824b4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6c910a59fc096407041f5d1afc61132106e38868d1feea27e52f1045ee1e6c16"
 dependencies = [
  "quote",
  "syn 2.0.68",
@@ -70,11 +72,25 @@ dependencies = [
 [[package]]
 name = "anyrun-plugin"
 version = "0.1.0"
-source = "git+https://github.com/Kirottu/anyrun#7aabad8d5bb7d1bffae903ce86427b888ab824b4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "812c7d893370d269754d733d768f8fb2eb42934925e5174261b6d44e716b5792"
 dependencies = [
  "abi_stable",
  "anyrun-interface",
  "anyrun-macros",
+]
+
+[[package]]
+name = "anyrun-powermenu"
+version = "0.1.0"
+dependencies = [
+ "abi_stable",
+ "anyrun-plugin",
+ "fuzzy-matcher",
+ "ron",
+ "serde",
+ "strum",
+ "strum_macros",
 ]
 
 [[package]]
@@ -242,19 +258,6 @@ name = "paste"
 version = "1.0.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "57c0d7b74b563b49d38dae00a0c37d4d6de9b432382b2892f0574ddcae73fd0a"
-
-[[package]]
-name = "powermenu"
-version = "0.1.0"
-dependencies = [
- "abi_stable",
- "anyrun-plugin",
- "fuzzy-matcher",
- "ron",
- "serde",
- "strum",
- "strum_macros",
-]
 
 [[package]]
 name = "proc-macro2"
